@@ -63,8 +63,11 @@
             </tr>
           </tbody>
         </table>
+      <!--內層pages 外層pagination-->
+        <!--內層get-product 外層getData-->
+      <pagination :pages="pagination" @get-product="getData"> </pagination>
+    
 
-      <pagination> </pagination>
       </div>
       
       <!-- Modal -->

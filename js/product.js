@@ -1,5 +1,5 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js';
-import pagination from './pagination.js';
+import pagination from '../pagination.js';
 
 let productModal = null;
 let delProductModal = null;
@@ -67,21 +67,21 @@ const app = createApp({
         })
     },
 
-    openModal(isNew, item){
+    openModal(status, item){
       //用new/edit/delete來判斷modal的狀態
-      if(isNew === 'new'){
+      if(status === 'new'){
         this.tempProduct = {
           imagesUrl :[],
         };
-        this.isNew = true;
+        this.status = true;
         productModal.show();
       }
-      else if (isNew === 'edit'){
+      else if (status === 'edit'){
         this.tempProduct = { ...item };//必須用拷貝不然會直接複製到畫面上
-        this.isNew = false;
+        this.status = false;
         productModal.show();
       }
-      else if (isNew === "delete"){
+      else if (status === "delete"){
         this.tempProduct = {...item};
         delProductModal.show()
       }

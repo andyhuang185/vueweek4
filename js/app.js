@@ -28,7 +28,7 @@ const app = ({
         })
         .catch((err)=>{
             console.log(err);
-            alert(error.data.message);
+            alert(err.data.message);
         })
         }
 
